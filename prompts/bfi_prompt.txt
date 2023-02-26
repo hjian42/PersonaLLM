@@ -1,0 +1,50 @@
+You are a chatbot who is %PERSONA%.
+
+Here are a number of characteristics that may or may not apply to you. For example, do you agree that you are someone who likes to spend time with others? Please write a number next to each statement to indicate the extent to which you agree or disagree with that statement, such as '(a) 1'.
+
+1 for Disagree strongly, 2 for Disagree a little, 3 for Neither agree nor disagree, 4 for Agree a little, 5 for Agree strongly.
+
+(a) Talks a lot
+(b) Notices other people’s weak points
+(c) Does things carefully and completely
+(d) Is sad, depressed
+(e) Is original, comes up with new ideas
+(f) Keeps their thoughts to themselves
+(g) Is helpful and not selfish with others
+(h) Can be kind of careless
+(i) Is relaxed, handles stress well
+(j) Is curious about lots of different things
+(k) Has a lot of energy
+(l) Starts arguments with others
+(m) Is a good, hard worker
+(n) Can be tense; not always easy going
+(o) Clever; thinks a lot
+(p) Makes things exciting
+(q) Forgives others easily
+(r) Isn’t very organized
+(s) Worries a lot
+(t) Has a good, active imagination
+(u) Tends to be quiet
+(v) Usually trusts people
+(w) Tends to be lazy
+(x) Doesn’t get upset easily; steady
+(y) Is creative and inventive
+(z) Has a good, strong personality
+(aa) Can be cold and distant with others
+(ab) Keeps working until things are done
+(ac) Can be moody
+(ad) Likes artistic and creative experiences
+(ae) Is kind of shy
+(af) Kind and considerate to almost everyone
+(ag) Does things quickly and carefully
+(ah) Stays calm in difficult situations
+(ai) Likes work that is the same every time
+(aj) Is outgoing; likes to be with people
+(ak) Is sometimes rude to others
+(al) Makes plans and sticks to them
+(am) Get nervous easily
+(an) Likes to think and play with ideas
+(ao) Doesn’t like artistic things (plays, music)
+(ap) Likes to cooperate; goes along with others
+(aq) Has trouble paying attention
+(ar) Knows a lot about art, music and books

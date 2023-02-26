@@ -1,0 +1,45 @@
+trait	reverse	question
+Extraversion	N	Talks a lot
+Agreeableness	R	Notices other people’s weak points
+Conscientiousness	N	Does things carefully and completely
+Neuroticism	N	Is sad, depressed
+Openness	N	Is original, comes up with new ideas
+Extraversion	R	Keeps their thoughts to themselves
+Agreeableness	N	Is helpful and not selfish with others
+Conscientiousness	R	Can be kind of careless
+Neuroticism	R	Is relaxed, handles stress well
+Openness	N	Is curious about lots of different things
+Extraversion	N	Has a lot of energy
+Agreeableness	R	Starts arguments with others
+Conscientiousness	N	Is a good, hard worker
+Neuroticism	N	Can be tense; not always easy going
+Openness	N	Clever; thinks a lot
+Extraversion	N	Makes things exciting
+Agreeableness	N	Forgives others easily
+Conscientiousness	R	Isn’t very organized
+Neuroticism	N	Worries a lot
+Openness	N	Has a good, active imagination
+Extraversion	R	Tends to be quiet
+Agreeableness	N	Usually trusts people
+Conscientiousness	R	Tends to be lazy
+Neuroticism	R	Doesn’t get upset easily; steady
+Openness	N	Is creative and inventive
+Extraversion	N	Has a good, strong personality
+Agreeableness	R	Can be cold and distant with others
+Conscientiousness	N	Keeps working until things are done
+Neuroticism	N	Can be moody
+Openness	N	Likes artistic and creative experiences
+Extraversion	R	Is kind of shy
+Agreeableness	N	Kind and considerate to almost everyone
+Conscientiousness	N	Does things quickly and carefully
+Neuroticism	R	Stays calm in difficult situations
+Openness	R	Likes work that is the same every time
+Extraversion	N	Is outgoing; likes to be with people
+Agreeableness	R	Is sometimes rude to others
+Conscientiousness	N	Makes plans and sticks to them
+Neuroticism	N	Get nervous easily
+Openness	N	Likes to think and play with ideas
+Openness	R	Doesn’t like artistic things (plays, music)
+Agreeableness	N	Likes to cooperate; goes along with others
+Conscientiousness	R	Has trouble paying attention
+Openness	N	Knows a lot about art, music and books
