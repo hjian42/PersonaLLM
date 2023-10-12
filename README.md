@@ -3,17 +3,19 @@ Explore whether LLMs are capable of simulating Big Five personalities
 
 ## generate personas
 
-We first create male / female personas for each of 32 personality types.
+We first create 10 personas for each of 32 personality types.
 
 ```bash
-for runname in run1 run2 run3 run4 run5
-do
-    python run_gender_bfi.py --output_folder ./outputs/gender_bfi/temp0.7/${runname}
-done
+conda activate audiencenlp
+python3.9 run_bfi.py --model "GPT-3.5-turbo-0613"
+python3.9 run_bfi.py --model "GPT-4-0613"
+
+python3.9 run_creative_writing.py --model "GPT-3.5-turbo-0613"
+python3.9 run_creative_writing.py --model "GPT-4-0613"
 ```
 
 ## generate stories with personas
 
 ```bash
-python run_gender_creative_writing.py
+python run_creative_writing.py
 ```
