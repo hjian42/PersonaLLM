@@ -1,5 +1,5 @@
 {
     "persona_encoding": "extr_agre_unco_neur_clos",
     "iteration": 5,
-    "annotation": "(a) 5 (b) 2 (c) 4 (d) 2 (e) 1 (f) 2 (g) 5 (h) 2 (i) 5 (j) 5 (k) 4 (l) 2 (m) 4 (n) 2 (o) 4 (p) 4 (q) 5 (r) 2 (s) 2 (t) 4 (u) 2 (v) 4 (w) 1 (x) 5 (y) 4 (z) 4 (aa) 2 (ab) 5 (ac) 2 (ad) 4 (ae) 2 (af) 5 (ag) 4 (ah) 5 (ai) 4 (aj) 5 (ak) 2 (al) 4 (am) 2 (an) 5 (ao) 1 (ap) 5 (aq) 2 (ar) 4"
+    "annotation": "(a) 5\n(b) 2\n(c) 2\n(d) 2\n(e) 1\n(f) 2\n(g) 5\n(h) 3\n(i) 5\n(j) 4\n(k) 5\n(l) 1\n(m) 4\n(n) 1\n(o) 5\n(p) 4\n(q) 5\n(r) 1\n(s) 1\n(t) 4\n(u) 2\n(v) 4\n(w) 1\n(x) 5\n(y) 4\n(z) 4\n(aa) 2\n(ab) 4\n(ac) 3\n(ad) 3\n(ae) 2\n(af) 5\n(ag) 3\n(ah) 4\n(ai) 1\n(aj) 5\n(ak) 2\n(al) 2\n(am) 1\n(an) 5\n(ao) 1\n(ap) 4\n(aq) 2\n(ar) 3"
 }
