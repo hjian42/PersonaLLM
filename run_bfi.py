@@ -11,9 +11,10 @@ from pathlib import Path
 import json
 import numpy as np
 import itertools
-from gpt import run_completion_query, is_answer_in_valid_form
+from gpt import is_answer_in_valid_form
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 import multiprocessing
+import replicate
 
 openai.organization = ""
 openai.api_key = ""
@@ -40,16 +41,32 @@ def run_gpt_query(model_name, temperature, system_prompt, user_prompt):
     )
     return response
 
+def run_llama2_query(temperature, system_prompt, user_prompt):
+    
+    response = replicate.run(
+    "meta/llama-2-70b-chat:2d19859030ff705a87c746f7e96eea03aefb71f166725aee39692f1476566d48",
+        input={"prompt": user_prompt,
+               "system_prompt": system_prompt,
+               "max_new_tokens": 500,
+               "temperature": temperature,
+               "top_p": 1.0,
+               }
+    )
+    return response
+
 @retry(wait=wait_random_exponential(min=1, max=60), stop=stop_after_attempt(15))
 def generate_bfi_response(model_name, temperature, persona_type, prompt_file):
-    """Explains a given text for a specific audience.
+    """Generate a response using the specified model, temperature, persona type, and prompt file.
 
     Args:
-        text (str): The input text to be explained.
-        prompt_file (str): The file path to the prompt file.
+        model_name (str): The name of the model to use for generating the response.
+        temperature (float): The temperature parameter for controlling the randomness of the generated response.
+        persona_type (str): The type of persona to use for generating the response.
+        prompt_file (str): The file containing the prompt to use for generating the response.
 
     Returns:
-        str: The explanation of the input text.
+        str: bfi response
+        str: user prompt
 
     """
     # Read prompt template
@@ -61,8 +78,16 @@ def generate_bfi_response(model_name, temperature, persona_type, prompt_file):
     user_prompt = user_prompt + "\n\n"
 
     while True:
-        response = run_gpt_query(model_name, temperature, system_prompt, user_prompt)
-        response = response["choices"][0]['message']['content'].strip("\n")
+        if model_name.lower().startswith("gpt"):
+            response = run_gpt_query(model_name, temperature, system_prompt, user_prompt)
+            response = response["choices"][0]['message']['content'].strip("\n")
+        elif model_name.lower().startswith("llama"):
+            # print("llama-2 generating")
+            # print(system_prompt, user_prompt)
+            response = run_llama2_query(temperature, system_prompt, user_prompt)
+            response = "".join([each for each in response]).strip("\n").strip()
+            # print("YOUR RESPONSE:")
+            # print(response)
 
         if is_answer_in_valid_form(response, 44):
             return response, user_prompt
@@ -74,7 +99,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--prompt_file", type=str, default="./prompts/bfi_prompt.txt")
     parser.add_argument("--model", default="gpt-3.5-turbo-0613", type=str)
-    parser.add_argument("--temperature", default=0.7, type=int)
+    parser.add_argument("--temperature", default=0.7, type=float)
     args = parser.parse_args()
 
     # create if not exits
@@ -98,7 +123,7 @@ def main():
             response = pool.apply_async(generate_bfi_response, args=(args.model, args.temperature, persona_type, args.prompt_file))
             persona_encoding = "_".join([trait[:4] for trait in persona_type])
             responses.append([persona_encoding, iteration, response])
-            # print(response)
+            # print(json_output)
     
     for persona_encoding, iteration, response in tqdm(responses):
         json_obj = {"persona_encoding": persona_encoding, "iteration": iteration}
