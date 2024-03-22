@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![arXiv](https://img.shields.io/badge/arXiv-2201.07281-b31b1b.svg)](https://arxiv.org/abs/2305.02547)
 
-This repo contains the official code for running `LLM personas` experiments and subsequent analyses in the PersonaLLM paper.
+This repo contains the official code for running `LLM persona` experiments and subsequent analyses in the PersonaLLM paper.
 
 
 ## Simulate `LLM personas`
