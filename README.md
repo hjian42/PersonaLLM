@@ -38,5 +38,4 @@ If you use this repository in your research, please kindly cite [our paper](http
 ```
 
 ## Acknowledgement
-
 PersonaLLM is a research program from MIT Center for Constructive Communication (@mit-ccc), MIT Media Lab, and Stanford University. We are interested in drawing from social and cognitive sciences to understand the behaviors of foundation models. 
