@@ -26,7 +26,7 @@ python3.9 run_creative_writing.py --model "llama-2"
 
 ## References
 
-If you use this repository in your research, please kindly cite [our paper](https://aclanthology.org/2022.coling-1.593): 
+If you use this repository in your research, please kindly cite [our paper](https://arxiv.org/abs/2305.02547): 
 
 ```bibtex
 @article{jiang2023personallm,
