@@ -31,7 +31,7 @@ If you use this repository in your research, please kindly cite [our paper](http
 ```bibtex
 @article{jiang2023personallm,
   title={PersonaLLM: Investigating the Ability of Large Language Models to Express Personality Traits},
-  author={Hang Jiang and Xiajie Zhang and Xubo Cao and Cynthia Breazeal and Jad Kabbara and Deb Roy},
+  author={Hang Jiang and Xiajie Zhang and Xubo Cao and Cynthia Breazeal and Deb Roy and Jad Kabbara},
   booktitle = "Findings of the Association for Computational Linguistics: NAACL 2024",
   year={2024}
 }
