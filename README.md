@@ -29,12 +29,26 @@ python3.9 run_creative_writing.py --model "llama-2"
 If you use this repository in your research, please kindly cite [our paper](https://arxiv.org/abs/2305.02547): 
 
 ```bibtex
-@article{jiang2023personallm,
-  title={PersonaLLM: Investigating the Ability of Large Language Models to Express Personality Traits},
-  author={Hang Jiang and Xiajie Zhang and Xubo Cao and Cynthia Breazeal and Deb Roy and Jad Kabbara},
-  booktitle = "Findings of the Association for Computational Linguistics: NAACL 2024",
-  year={2024}
+@inproceedings{jiang-etal-2024-personallm,
+    title = "{P}ersona{LLM}: Investigating the Ability of Large Language Models to Express Personality Traits",
+    author = "Jiang, Hang  and
+      Zhang, Xiajie  and
+      Cao, Xubo  and
+      Breazeal, Cynthia  and
+      Roy, Deb  and
+      Kabbara, Jad",
+    editor = "Duh, Kevin  and
+      Gomez, Helena  and
+      Bethard, Steven",
+    booktitle = "Findings of the Association for Computational Linguistics: NAACL 2024",
+    month = jun,
+    year = "2024",
+    address = "Mexico City, Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-naacl.229",
+    pages = "3605--3627",
 }
+
 ```
 
 ## Acknowledgement
