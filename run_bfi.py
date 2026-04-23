@@ -1,7 +1,6 @@
 import argparse
 import random
 import json
-import openai
 import os
 import pandas as pd
 import sys
@@ -11,13 +10,13 @@ from pathlib import Path
 import json
 import numpy as np
 import itertools
+from openai import OpenAI
 from gpt import is_answer_in_valid_form
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 import multiprocessing
 import replicate
 
-openai.organization = ""
-openai.api_key = ""
+client = OpenAI()  # reads OPENAI_API_KEY from environment
 
 
 def construct_big_five_words(persona_type):
@@ -31,7 +30,7 @@ def construct_big_five_words(persona_type):
     return ", ".join(options)
 
 def run_gpt_query(model_name, temperature, system_prompt, user_prompt):
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model=model_name,
         messages=[
             {"role": "system", "content": system_prompt},
@@ -80,7 +79,7 @@ def generate_bfi_response(model_name, temperature, persona_type, prompt_file):
     while True:
         if model_name.lower().startswith("gpt"):
             response = run_gpt_query(model_name, temperature, system_prompt, user_prompt)
-            response = response["choices"][0]['message']['content'].strip("\n")
+            response = response.choices[0].message.content.strip("\n")
         elif model_name.lower().startswith("llama"):
             # print("llama-2 generating")
             # print(system_prompt, user_prompt)

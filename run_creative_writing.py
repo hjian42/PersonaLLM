@@ -1,7 +1,6 @@
 import argparse
 import random
 import json
-import openai
 import os
 import pandas as pd
 import sys
@@ -11,13 +10,13 @@ from pathlib import Path
 import json
 import numpy as np
 import itertools
+from openai import OpenAI
 # from gpt import run_completion_query
 from tenacity import retry, stop_after_attempt, wait_random_exponential
 import multiprocessing
 import replicate
 
-openai.organization = ""
-openai.api_key = ""
+client = OpenAI()  # reads OPENAI_API_KEY from environment
 
 def construct_big_five_words(persona_type: list):
     """Construct the list of personality traits
@@ -30,7 +29,7 @@ def construct_big_five_words(persona_type: list):
     return ", ".join(options)
 
 def run_gpt_query(model_name, temperature, system_prompt, prev_user_prompt, prev_assistant_prompt, user_prompt):
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model=model_name,
         messages=[
             {"role": "system", "content": system_prompt},
@@ -85,7 +84,7 @@ def generate_bfi_story(model_name, temperature, persona_type, prompt_file, json_
 
     if model_name.lower().startswith("gpt"):
         response = run_gpt_query(model_name, temperature, system_prompt, prev_user_prompt, prev_assistant_prompt, user_prompt)
-        response = response["choices"][0]['message']['content'].strip("\n")
+        response = response.choices[0].message.content.strip("\n")
     elif model_name.lower().startswith("llama"):
         response = run_llama2_query(temperature, system_prompt, prev_user_prompt, prev_assistant_prompt, user_prompt)
         response = "".join([each for each in response]).strip("\n").strip()
