@@ -4,24 +4,35 @@
 
 This repo contains the official code for running `LLM persona` experiments and subsequent analyses in the PersonaLLM paper.
 
+## Setup
+
+```bash
+pip install -r requirements.txt
+```
+
+Set your API keys as environment variables before running any scripts:
+
+```bash
+export OPENAI_API_KEY="your-openai-api-key"
+export REPLICATE_API_TOKEN="your-replicate-token"  # only needed for llama-2
+```
 
 ## Simulate `LLM personas`
 
 We first create 10 personas for each of 32 personality types.
 
 ```bash
-conda activate audiencenlp
-python3.9 run_bfi.py --model "GPT-3.5-turbo-0613"
-python3.9 run_bfi.py --model "GPT-4-0613"
-python3.9 run_bfi.py --model "llama-2"
+python run_bfi.py --model "gpt-3.5-turbo-0613"
+python run_bfi.py --model "gpt-4-0613"
+python run_bfi.py --model "llama-2"
 ```
 
 ## Generate stories with `LLM personas`
 
 ```bash
-python3.9 run_creative_writing.py --model "GPT-3.5-turbo-0613"
-python3.9 run_creative_writing.py --model "GPT-4-0613"
-python3.9 run_creative_writing.py --model "llama-2"
+python run_creative_writing.py --model "gpt-3.5-turbo-0613"
+python run_creative_writing.py --model "gpt-4-0613"
+python run_creative_writing.py --model "llama-2"
 ```
 
 ## References

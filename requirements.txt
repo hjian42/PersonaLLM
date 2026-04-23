@@ -1,0 +1,7 @@
+openai>=1.0.0
+replicate
+tqdm
+pandas
+numpy
+scipy
+tenacity
